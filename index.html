@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>I love you Krisha</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <style>
+    body {
+      margin: 0;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background: #f5f5f5;
+      font-family: Arial, sans-serif;
+    }
+
+    .card {
+      background: white;
+      padding: 20px;
+      border-radius: 14px;
+      width: 280px;
+      text-align: center;
+      box-shadow: 0 8px 25px rgba(0,0,0,0.2);
+    }
+
+    img {
+      width: 180px;
+      border-radius: 12px;
+    }
+
+    p {
+      font-size: 18px;
+      margin: 15px 0;
+    }
+
+    .buttons {
+      position: relative;
+      height: 80px;
+    }
+
+    button {
+      padding: 8px 18px;
+      border-radius: 18px;
+      border: none;
+      font-size: 15px;
+      cursor: pointer;
+      position: absolute;
+    }
+
+    #yes {
+      background: #ff4d6d;
+      color: white;
+      left: 0;
+    }
+
+    #no {
+      background: #ddd;
+      right: 0;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="card">
+    <img src="https://media.tenor.com/7G6JZ3Y0nPAAAAAC/minion-love.gif" alt="Minion" />
+    <p>Will you be my Valentine?</p>
+
+    <div class="buttons">
+      <button id="yes" onclick="yesClicked()">Yes</button>
+      <button id="no">No</button>
+    </div>
+  </div>
+
+  <script>
+    const noBtn = document.getElementById("no");
+
+    function escape() {
+      const x = Math.random() * 220 - 110;
+      const y = Math.random() * 100 - 50;
+      noBtn.style.transform = `translate(${x}px, ${y}px)`;
+    }
+
+    // Desktop + mobile
+    noBtn.addEventListener("mouseover", escape);
+    noBtn.addEventListener("touchstart", escape);
+
+    function yesClicked() {
+      document.body.innerHTML = `
+        <div style="
+          display:flex;
+          justify-content:center;
+          align-items:center;
+          height:100vh;
+          background:#fff0f5;
+          font-family:Arial;
+          text-align:center;">
+          <div>
+            <img src="https://i.imgur.com/8YqGk5k.gif" width="200">
+            <h2>YIPIEEEEE I LOVE YOU SO SO MUCHIEE BEBE</h2>
+          </div>
+        </div>
+      `;
+    }
+  </script>
+
+</body>
+</html>
