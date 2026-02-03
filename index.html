@@ -1,0 +1,37 @@
+<script>
+const noBtn = document.getElementById("no");
+
+function escape(){
+  const x=Math.random()*220-110;
+  const y=Math.random()*100-50;
+  noBtn.style.transform=`translate(${x}px,${y}px)`;
+}
+noBtn.addEventListener("mouseover",escape);
+noBtn.addEventListener("touchstart",escape);
+
+function yesClicked(){
+
+  // 🔊 LOUD BANANA VOICE
+  const banana = new SpeechSynthesisUtterance("BANANAAAAAA!");
+  banana.pitch = 1.2;
+  banana.rate = 0.8;
+  banana.volume = 1; // MAX
+  speechSynthesis.speak(banana);
+
+  document.body.innerHTML=`
+    <div style="display:flex;justify-content:center;align-items:center;height:100vh;background:#fff0f5;text-align:center;font-family:Arial;">
+      <div>
+        <svg width="200" viewBox="0 0 200 300">
+          <rect x="40" y="40" width="120" height="180" rx="50" fill="#FFD93D"/>
+          <rect x="40" y="140" width="120" height="80" fill="#4A90E2"/>
+          <circle cx="100" cy="95" r="28" fill="#D9D9D9"/>
+          <circle cx="100" cy="95" r="18" fill="#fff"/>
+          <circle cx="100" cy="95" r="8" fill="#000"/>
+          <path d="M75 125 Q100 150 125 125" stroke="#000" stroke-width="4" fill="none"/>
+        </svg>
+        <h2>YIPIEEEEEEE I LOVE YOU SO MUCHHHHHH</h2>
+      </div>
+    </div>
+  `;
+}
+</script>
